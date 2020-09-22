@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.slideshow {
+    top: 6.5rem;
+    width: 100%;
+}
+
+.slider li,
+ul {
+    width: 100%;
+}
+
+.slider li {
+    overflow: hidden;
+}
+
+.slider li img {
+    top: 5rem;
+    width: 100%;
+    height: 88vh;
+}
+
+.slider .caption {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.slider .caption h1 {
+    font-size: 10rem;
+    font-weight: 700;
+    color: #dfdfdf;
+}
+
+.slider .caption h2 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffffffd5;
+}
+
+@media (max-width: 480px) {
+    .slider .caption h1 {
+        font-size: 6rem !important;
+        font-weight: 700;
+    }
+    .slider .caption h2 {
+        margin: 0;
+        font-size: 1.5rem !important;
+        font-weight: 900;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .slider .caption h1 {
+        font-size: 7rem !important;
+        font-weight: 700;
+    }
+    .slider .caption h2 {
+        margin: 0;
+        font-size: 2.2rem !important;
+        font-weight: 900;
+    }
+}
+
+.pagination {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination li {
+    font-size: 20px;
+    margin: 2px 5px;
+    color: #858585;
+    cursor: pointer;
+}
+
+.left,
+.right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .slider .caption p {
+        display: none;
+    }
+    .slider .caption h1 {
+        font-size: 35px;
+    }
+    .left,
+    .right {
+        font-size: 30px;
+    }
+    .slider li img {
+        width: 600px;
+    }
+    .pagination {
+        display: none;
+    }
+}
