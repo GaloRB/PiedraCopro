@@ -23,51 +23,9 @@
 
 <body>
 
-
-    <header class="header">
-        <div class="container-logo">
-            <div class="logo">
-                <a href="index.html">
-
-                </a>
-            </div>
-        </div>
-
-        <div class="barra">
-            <nav class="nav">
-                <a href="index">Inicio</a>
-                <a href="nosotros">Nosotros</a>
-                <a href="servicios">Servicios</a>
-                <a href="contacto">Contacto</a>
-            </nav>
-
-            <div class="redes">
-                <div class="facebook"><a href="#" rel="nofollow" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
-                <div class="instagram"><a href="#" rel="nofollow" target="_blank"><i class="fab fa-instagram-square"></i></a></div>
-                <div class="whatsapp"><a href="https://api.whatsapp.com/send?phone=527293593044" rel="nofollow" target="_blank"><i class="fab fa-whatsapp-square"></i></a></div>
-            </div>
-            <div class="menu">
-                <input type="checkbox" id="btn-menu">
-                <label for="btn-menu"><i class="fas fa-bars" id="bt"></i>
-                <i class="fas fa-times" id="cancel"></i></label>
-                <div class="nav-mobile">
-
-
-                    <div class="header-menumobile">
-                        <p>Menú</p>
-                    </div>
-                    <ul>
-                        <li><a href="index">Inicio</a></li>
-                        <li><a href="nosotros">Nosotros</a></li>
-                        <li><a href="servicios">Servicios</a></li>
-                        <li><a href="contacto">Contacto</a></li>
-                        <li><a href="#" rel="nofollow" target="_blank">Facebook</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </header>
+    <?php
+        include 'includes/header.php';
+    ?>
 
     <section class="banner">
 
@@ -129,35 +87,10 @@
     <div class="portafolio">
         <p>La preparación, experiencia y ética del equipo de trabajo permite generar confianza hacia los clientes buscando satisfacer sus necesidades para el cumplimiento en cada proyecto de remodelación, mantenimiento y construcción.</p>
 
-        <div class="contenedor-valores">
-            <div class="contenedor-val">
-                <div class="mision-circulo animacion-arriba">
-                    <div class="valor-cuadro">
-                        <span>MISIÓN</span>
-                    </div>
-                </div>
-                <p><b>PIEDRA COPRO</b> empresa encaminada a la promoción de construcción y proyectos en el ámbito público y privado, teniendo como objetivo el cumplimiento satisfactorio de cada trabajo.</p>
-            </div>
+       <?php
+            include 'includes/valores.php';
+       ?>
 
-            <div class="contenedor-val">
-                <div class="vision-circulo animacion-abajo">
-                    <div class="valor-cuadro">
-                        <span>VISIÓN</span>
-                    </div>
-                </div>
-                <p><b>PIEDRA COPRO</b> pretende Ser una empresa reconocida por la calidad en su trabajo. Confiable y competitiva para satisfacer las expectativas de nuestros clientes.</p>
-            </div>
-
-            <div class="contenedor-val">
-                <div class="valor-circulo animacion-arriba">
-                    <div class="valor-cuadro">
-                        <span>VALORES</span>
-                    </div>
-                </div>
-                <p>Ética Honestidad Trabajo en equipo Responsabilidad.
-                </p>
-            </div>
-        </div>
     </div>
 
 
@@ -249,84 +182,13 @@
 
     </div>
 
+    <?php
+        include 'includes/form.php';
+    ?>
 
-
-
-    <div class="contenedor-formulario">
-        <h4>!Pide tu cotizacion o solicita una cita!</h4>
-        <form action="enviar.php" method="POST">
-            <fieldset>
-                <legend>Información de contácto</legend>
-
-
-                <label for="nombre">Nombre: </label>
-                <input type="text" name="nombre" required id="nombre" placeholder="Escribe tu nombre">
-
-
-
-                <label for="apellido">Primer apellido: </label>
-                <input type="text" name="apellido" id="apellido" placeholder="Escribe tu primer apellido">
-
-
-
-                <label for="numero">Número telefónico: </label>
-                <input type="tel" name="tel" id="tel" required placeholder="Escribe tu número">
-
-
-
-
-                <label for="email">Correo Electronico: </label>
-                <input type="email" name="email" id="emal" placeholder="Escribe tu correo">
-
-
-
-                <label for="mensaje">Escribe un breve mensaje si necesitas una cita o cotizacion: </label>
-                <textarea name="mensaje" id="mensaje"></textarea>
-
-                <input class="btn-enviar" type="submit" value="Enviar">
-
-
-            </fieldset>
-        </form>
-    </div>
-
-    <footer class="footer">
-        <div class="contenedor-footer">
-            <h5>PIEDRA COPORO-CONSTRUCCIÓN REMODELACIÓN Y MANTENIMIENTO</h5>
-            <h5>SERVICIOS</h5>
-            <div class="contenedor-footer-ul">
-                <div class="ul">
-                    <ul>
-                        <li><a href="nosotros">Nosotros</a></li>
-                        <li><a href="servicios">Servicios</a></li>
-                        <li><a href="contacto">Contácto</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <h5>Dirección</h5>
-            <p class="direccion">Calle Avenida 16 De Septiembre No9, Colonia Barrio De Santa María, San Jeronimo Acazulco, Ocoyoacac, Estado De México C.P. 52740</p>
-            <h5>Contácto</h5>
-            <p>Tel: 7293593044</p>
-            <p>Correo: contacto@piedracopro.com</p>
-            <p>Correo: piedracopro@gmail.com</p>
-            <p><a id="privacidad" href="aviso">Aviso de privacidad</a></p>
-            <div class="redes-footer">
-                <div class="facebook-footer"><a href="#" rel="nofollow" target="_blank"><i class=" fab fa-facebook-f "></i></a></div>
-                <div class="instagram-footer "><a href="# " rel="nofollow " target="_blank"><i class="fab fa-instagram-square"></i></a>
-                </div>
-                <div class="whatsapp-footer"><a href="https://api.whatsapp.com/send?phone=527293593044" rel="nofollow" target="_blank"><i class="fab fa-whatsapp-square"></i></a></div>
-            </div>
-
-            <div class="copyright">
-                <p>Todos los derechos reservados 2020 &copy;</p>
-                <p>Desarrollado por GaloRB</p>
-            </div>
-
-        </div>
-
-    </footer>
+    <?php
+        include 'includes/footer.php';
+    ?>
 
 
     <script src="js/app.js"></script>
