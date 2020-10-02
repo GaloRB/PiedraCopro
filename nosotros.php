@@ -27,7 +27,7 @@
     ?>
 
     <section class="banner-nosotros">
-        <div class="texto-nosotros">
+        <div id="text-nos" class="texto-nosotros">
             <h1>¿Quiénes somos?</h1>
         </div>
     </section>

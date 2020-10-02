@@ -1,3 +1,23 @@
+function ocultar() {
+    document.getElementById('menu-bar').style.display = "none";
+
+}
+
+function ocultarMenu() {
+
+    document.getElementById('menu-resp').style.display = "none";
+    document.getElementById('text-nos').style.marginTop = "6rem";
+}
+
+function mostrar() {
+
+    document.getElementById('menu-resp').style.display = "block";
+    document.getElementById('cancel').style.display = "block";
+    document.getElementById('text-nos').style.margin = "0";
+}
+
+
+
 // ------------------------------------------- funciones de animacion de scroll ------------------------------------------//
 let animacion = document.querySelectorAll(".animacion-arriba");
 

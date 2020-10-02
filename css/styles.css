@@ -346,93 +346,75 @@ ul {
 }
 
 
-/* -------------------- menu mobile ------------*/
+/* ------------- menu responsive ------------------------*/
 
-@media (min-width: 770px) {
-    .menu {
+#cancel {
+    display: none;
+    color: white;
+    position: absolute;
+    font-size: 2.5rem;
+    top: 1.5rem;
+    margin-left: 3rem;
+}
+
+.icono-menu {
+    color: white;
+    font-size: 3.3rem;
+    margin-left: 4rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+@media (min-width: 1020px) {
+    .icono-menu {
         display: none;
     }
 }
 
-#btn-menu {
+.menu-responsive {
+    background-color: rgba(224, 208, 61, 0.959);
     display: none;
-}
-
-.nav-mobile {
+    margin-top: 6.6rem;
+    transition: all 0.5s;
+    height: 45vh;
+    z-index: 9999;
     position: fixed;
-    left: -25rem;
-    width: 25rem;
-    height: 80%;
-    background-color: #c2c02d93;
-    transition: all 0.5s;
+    width: 60%;
+    animation: mostrar-menu 0.2s;
+    transition: 0.9s;
 }
 
-.nav-mobile p {
-    font-size: 2.2rem;
+.menu-responsive a {
     color: white;
+    font-size: 2.5rem;
+}
+
+.menu-responsive p {
+    color: white;
+    font-size: 2.5rem;
     text-align: center;
-    line-height: 7rem;
-    background-color: #868420a8;
-    user-select: none;
+    padding: 2rem;
+    margin: 0;
 }
 
-.nav-mobile ul {
-    padding-left: 0;
+.menu-responsive ul {
+    padding: 0;
 }
 
-.nav-mobile ul li {
-    background-color: #868520;
+.menu-responsive li {
+    background-color: rgba(206, 192, 69, 0.973);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid white;
 }
 
-.nav-mobile ul a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    line-height: 6.5rem;
-    font-size: 2rem;
-    color: white;
-    padding-left: 7rem;
-    box-sizing: border-box;
-    border-bottom: 1px solid black;
-    margin-left: 0;
-}
-
-label #bt,
-label #cancel {
-    position: absolute;
-    cursor: pointer;
-}
-
-label #bt {
-    left: 4rem;
-    top: 1.3rem;
-    font-size: 3.5rem;
-    color: white;
-    transition: all 0.5s;
-}
-
-label #cancel {
-    z-index: 1111;
-    left: -19.5rem;
-    top: 3.5rem;
-    font-size: 3rem;
-    color: white;
-    padding: 0.4rem 0.9rem;
-    transition: all 0.5s ease;
-}
-
-#btn-menu:checked~.nav-mobile {
-    left: 0;
-}
-
-#btn-menu:checked~label #bt {
-    left: 25rem;
-    opacity: 0;
-    pointer-events: none;
-}
-
-#btn-menu:checked~label #cancel {
-    left: 19.5rem;
+@keyframes mostrar-menu {
+    0% {
+        transform: translatex(-200rem);
+    }
+    100% {
+        transform: translatex(0);
+    }
 }
 
 

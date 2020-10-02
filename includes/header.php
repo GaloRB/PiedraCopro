@@ -20,15 +20,20 @@
                 <div class="instagram"><a href="#" rel="nofollow" target="_blank"><i class="fab fa-instagram-square"></i></a></div>
                 <div class="whatsapp"><a href="https://api.whatsapp.com/send?phone=527293593044" rel="nofollow" target="_blank"><i class="fab fa-whatsapp-square"></i></a></div>
             </div>
-            <div class="menu">
-                <input type="checkbox" id="btn-menu">
-                <label for="btn-menu"><i class="fas fa-bars" id="bt"></i>
-                <i class="fas fa-times" id="cancel"></i></label>
-                <div class="nav-mobile">
 
 
-                    <div class="header-menumobile">
-                        <p>Menú</p>
+            <div  class="icono-menu" onclick="mostrar();" >
+            <i id="menu-bar" class="fas fa-bars" onclick="ocultarMenu();"></i>
+            
+            </div>
+             
+
+    </header>
+
+    <div id="menu-resp" class="menu-responsive">
+                <div class="container-menu-responsive">
+                <div class="header-menu-responsive">
+                <i id="cancel" class="fas fa-times icono-menu" onclick="ocultarMenu();"></i><p>Menú</p>
                     </div>
                     <ul>
                         <li><a href="index">Inicio</a></li>
@@ -37,8 +42,6 @@
                         <li><a href="contacto">Contacto</a></li>
                         <li><a href="#" rel="nofollow" target="_blank">Facebook</a></li>
                     </ul>
+
                 </div>
             </div>
-        </div>
-
-    </header>

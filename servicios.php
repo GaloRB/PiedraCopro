@@ -28,7 +28,7 @@
     ?>
 
     <section class="banner-servicios">
-        <div class="texto-nosotros">
+        <div id="text-nos" class="texto-nosotros">
             <h1>Nuestros Servicios</h1>
         </div>
     </section>
