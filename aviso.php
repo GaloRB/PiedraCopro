@@ -10,6 +10,7 @@
     <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet"  href="css/style-cookie.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e954e6d43f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -22,50 +23,9 @@
 <body>
 
 
-    <header class="header">
-        <div class="container-logo">
-            <div class="logo">
-                <a href="index.html">
-
-                </a>
-            </div>
-        </div>
-
-        <div class="barra">
-            <nav class="nav">
-                <a href="index">Inicio</a>
-                <a href="nosotros">Nosotros</a>
-                <a href="servicios">Servicios</a>
-                <a href="contacto">Contacto</a>
-            </nav>
-
-            <div class="redes">
-                <div class="facebook"><a href="#" rel="nofollow" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
-                <div class="instagram"><a href="#" rel="nofollow" target="_blank"><i class="fab fa-instagram-square"></i></a></div>
-                <div class="whatsapp"><a href="https://api.whatsapp.com/send?phone=527293593044" rel="nofollow" target="_blank"><i class="fab fa-whatsapp-square"></i></a></div>
-            </div>
-            <div class="menu">
-                <input type="checkbox" id="btn-menu">
-                <label for="btn-menu"><i class="fas fa-bars" id="bt"></i>
-                <i class="fas fa-times" id="cancel"></i></label>
-                <div class="nav-mobile">
-
-
-                    <div class="header-menumobile">
-                        <p>Menú</p>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="#" rel="nofollow" target="_blank">Facebook</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </header>
+<?php
+        include 'includes/header.php';
+    ?>
 
     <main class="-contendeor-contactanos">
         <div class="contactanos">
@@ -96,43 +56,14 @@
         </div>
 
 
-        <footer class="footer">
-            <div class="contenedor-footer">
-                <h5>PIEDRA COPORO-CONSTRUCCIÓN REMODELACIÓN Y MANTENIMIENTO</h5>
-                <h5>SERVICIOS</h5>
-                <div class="contenedor-footer-ul">
-                    <div class="ul">
-                        <ul>
-                            <li><a href="nosotros">Nosotros</a></li>
-                            <li><a href="servicios">Servicios</a></li>
-                            <li><a href="contacto">Contácto</a></li>
-                        </ul>
-                    </div>
+        <?php
+        include 'includes/footer.php';
+    ?>
 
-                </div>
-
-                <h5>Dirección</h5>
-                <p class="direccion">Calle Avenida 16 De Septiembre No9, Colonia Barrio De Santa María, San Jeronimo Acazulco, Ocoyoacac, Estado De México C.P. 52740</p>
-                <h5>Contácto</h5>
-                <p>Tel: 722558899</p>
-                <p>Correo: piedracopro@gmail.com</p>
-                <div class="redes-footer">
-                    <div class="facebook-footer"><a href="#" rel="nofollow" target="_blank"><i class=" fab fa-facebook-f "></i></a></div>
-                    <div class="instagram-footer "><a href="# " rel="nofollow " target="_blank"><i class="fab fa-instagram-square"></i></a>
-                    </div>
-                    <div class="whatsapp-footer"><a href="https://api.whatsapp.com/send?phone=527293593044" rel="nofollow" target="_blank"><i class="fab fa-whatsapp-square"></i></a></div>
-                </div>
-
-                <div class="copyright">
-                    <p>Todos los derechos reservados 2020 &copy;</p>
-                    <p>Desarrollado por GaloRB</p>
-                </div>
-
-            </div>
-
-        </footer>
+       
 
 
+        <script src="js/main-cookie.js"></script>
         <script src="js/app.js"></script>
 </body>
 

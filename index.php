@@ -1,3 +1,9 @@
+<?php
+        include 'includes/conection.php';
+    ?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet"  href="css/style-cookie.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e954e6d43f.js" crossorigin="anonymous"></script>
@@ -31,34 +38,20 @@
 
         <div class="slideshow">
             <ul class="slider">
-                <li>
-                    <img src="img/banner2.jpeg" alt="">
+            <?php
+                $sql="SELECT * from banner_index";
+                $result=mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_array($result)){
+                    echo '<li>
+                    <img src="'.$row['ruta_img'].'" alt="'.$row['alt'].'">
                     <section class="caption">
                         <h1>PIEDRA COPRO</h1>
                         <h2>CONSTRUCCIÓN, MANTENIMIENTO Y REMODELACIÓN</h2>
                     </section>
-                </li>
-                <li>
-                    <img src="img/banner4.jpeg" alt="">
-                    <section class="caption">
-                        <h1>PIEDRA COPRO</h1>
-                        <h2>CONSTRUCCIÓN, MANTENIMIENTO Y REMODELACIÓN</h2>
-                    </section>
-                </li>
-                <li>
-                    <img src="img/construccion3.jpeg" alt="">
-                    <section class="caption">
-                        <h1>PIEDRA COPRO</h1>
-                        <h2>CONSTRUCCIÓN, MANTENIMIENTO Y REMODELACIÓN</h2>
-                    </section>
-                </li>
-                <li>
-                    <img src="img/banner6.jpeg" alt="">
-                    <section class="caption">
-                        <h1>PIEDRA COPRO</h1>
-                        <h2>CONSTRUCCIÓN, MANTENIMIENTO Y REMODELACIÓN</h2>
-                    </section>
-                </li>
+                </li>';
+                }
+            ?>
+                
             </ul>
 
             <ol class="pagination">
@@ -85,8 +78,14 @@
     </section>
 
     <div class="portafolio">
-        <p>La preparación, experiencia y ética del equipo de trabajo permite generar confianza hacia los clientes buscando satisfacer sus necesidades para el cumplimiento en cada proyecto de remodelación, mantenimiento y construcción.</p>
+        <?php
+                    $sql="SELECT * from nosotros";
+                    $result=mysqli_query($conn,$sql);
+                    while($row=mysqli_fetch_array($result)){
 
+                        echo '<p>'.$row['texto_nosotros'].'</p>';
+                    }
+        ?>
        <?php
             include 'includes/valores.php';
        ?>
@@ -99,37 +98,26 @@
         <h2>Nuestros Servicios</h2>
         <div class="servicios">
 
-            <div class="card-servicios dos card-const" id="construccion">
-                <img src="img/construccion3.jpeg" alt="foto-de-constuccion">
-                <h3>CONSTRUCCIÓN</h3>
-                <p> En campos de arquitectura e Ingeniería para el desarrollo de edificaciones e infraestructuras...</p>
-                <a href="servicios#const" class="btn-servicios btnconst">Ver Más</a>
-            </div>
+        <?php
+                $sql="SELECT * from card_const";
+                $result=mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_array($result)){
 
-            <div class="card-servicios dos card-mant" id="mantenimiento">
-                <img src="img/mantenimietno1.jpeg" alt="foto-de-mantenimietno">
-                <h3>MANTENIMIENTO</h3>
-                <p>Se Realizan trabajos de conservación y preventivos: Impermeabilización, pintura, pisos, hidroneneumáticos, pluvial, y más..</p>
-                <a href="servicios#mant" class="btn-servicios btn-man">Ver Más</a>
-            </div>
-
-            <div class="card-servicios dos card-rem" id="remodelacion">
-                <img src="img/remodelacion1.jpeg" alt="foto-de-remodelacion">
-                <h3>REMODELACIÓN</h3>
-                <p>Realizamos trabajos en plafón, pastas, acabados, techos verdes y terrazas, diseño de interiores, celosias metálicas, persianas, cristal templado y más...
-                </p>
-                <a href="servicios#rem" class="btn-servicios btn-rem">Ver Más</a>
-            </div>
-
-
-
-            <div class="card-servicios dos card-rel">
-                <img src="img/plano.jpg" alt="foto-de-plano">
-                <h3>RELACIONADOS</h3>
-                <p>Proyectos que deriven de la obra; diseño de interiores, renders, planos, recorridos virtuales. Creados a partir de la idea generada por nuestros clientes.</p>
-                <a href="servicios#otr" class="btn-servicios btn-man">Ver Más</a>
-            </div>
-
+                   echo ' <div class="'.$row['clase_color'].' responsive">
+                        <div class="card-servicios" id="construccion">
+                                <div class="card-servicios-img">
+                                <img src="'.$row['ruta_img'].'" alt="'.$row['alt'].'">
+                                </div>
+                                <div class="card-servicios-texto">
+                                <h3>'.$row['titulo'].'</h3>
+                                <p>'.$row['descripcion'].'</p>
+                                </div>
+                                <a href="servicios#const" class="btn-servicios ">Ver Más</a>
+                        </div>
+                    </div>';
+                }
+            ?>
+            
         </div>
 
     </main>
@@ -191,6 +179,14 @@
     ?>
 
 
+     <?php
+        include 'includes/aviso-cookies.php';
+    ?>       
+
+    
+        
+
+    <script src="js/main-cookie.js"></script>
     <script src="js/app.js"></script>
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/main.js"></script>

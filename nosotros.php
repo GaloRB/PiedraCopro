@@ -10,6 +10,7 @@
     <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet"  href="css/style-cookie.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e954e6d43f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -56,7 +57,11 @@
             include 'includes/footer.php';
         ?>
 
+        <?php
+             include 'includes/aviso-cookies.php';
+        ?>       
 
+        <script src="js/main-cookie.js"></script>
         <script src="js/app.js"></script>
 </body>
 

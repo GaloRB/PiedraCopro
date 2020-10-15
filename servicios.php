@@ -1,3 +1,8 @@
+<?php
+     include 'includes/conection.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,6 +15,7 @@
     <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet"  href="css/style-cookie.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/lightbox.min.css">
     <script src="https://kit.fontawesome.com/e954e6d43f.js" crossorigin="anonymous"></script>
@@ -58,78 +64,34 @@
             </ul>
         </div>
 
-        <div class="obras">
-            <H4>OBRA: Construcción de casa habitación, Ubicación: Ocoyoacac, Estado de México</H4>
-        </div>
+        <?php
+                $sql="SELECT * from obra_const";
+                $result=mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_array($result)){
+             echo '<div class="obras">
+                         <H4>'.$row['titulo'].'</H4>
+                    </div>
+                
+                        <div class="gallery-container">
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img2'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img2'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img3'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img3'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img4'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img4'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                        </div>';
+                }
+                ?>
 
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <a href="images/construccion (1).jpeg" data-lightbox="roadtrip"><img src="images/construccion (1).jpeg" alt="Foto de contrucion de casa habitación"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/construccion (2).jpeg" data-lightbox="roadtrip"><img src="images/construccion (2).jpeg" alt="Foto de contrucion de casa habitación"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/construccion (3).jpeg" data-lightbox="roadtrip"><img src="images/construccion (3).jpeg" alt="Foto de contrucion de casa habitación"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/construccion (4).jpeg" data-lightbox="roadtrip"><img src="images/construccion (4).jpeg" alt="Foto de contrucion de casa habitación"></a>
-            </div>
-
-
-        </div>
-
-        <div class="obras">
-            <H4> OBRA: Demolición y construcción de cárcamo en Temascaltzingo Estado de México</H4>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <a href="images/carcamo.jpeg" data-lightbox="roadtrip"><img src="images/carcamo.jpeg" alt="Foto demolición y contrucción de carcamo"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/carcamo2.jpeg" data-lightbox="roadtrip"><img src="images/carcamo2.jpeg" alt="Foto demolición y contrucción de carcamo"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/carcamo3.jpeg" data-lightbox="roadtrip"><img src="images/carcamo3.jpeg" alt="Foto demolición y contrucción de carcamo"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/carcamo4.jpeg" data-lightbox="roadtrip"><img src="images/carcamo4.jpeg" alt="Foto demolición y contrucción de carcamo"></a>
-            </div>
-
-
-        </div>
-
-
-        <div class="obras">
-            <H4>OBRA: Ampliación de infraestructura hidráulica en Almoloya de Juárez.
-            </H4>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <a href="images/hidraulica - copia.jpg" data-lightbox="roadtrip"><img src="images/hidraulica - copia.jpg" alt="Foto de ampliación de infraestructura hidraulica"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/hidraulica2 - copia.jpg" data-lightbox="roadtrip"><img src="images/hidraulica2 - copia.jpg" alt="Foto de ampliación de infraestructura hidraulica"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/hidraulica3 - copia.jpg" data-lightbox="roadtrip"><img src="images/hidraulica3 - copia.jpg" alt="Foto de ampliación de infraestructura hidraulica"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/tuberia.jpg" data-lightbox="roadtrip"><img src="images/tuberia.jpg" alt="Foto de ampliación de infraestructura hidraulica"></a>
-            </div>
-
-        </div>
 
         <div id="mant"></div>
         <div class="contendor-serv">
@@ -152,167 +114,35 @@
             </ul>
         </div>
 
-        <div class="obras">
-            <H4>OBRA: Aplicación de pintura en Edificación de 3 niveles, Metepec Edo. Méx
-            </H4>
-        </div>
+        <?php
+                $sql="SELECT * from obra_mant";
+                $result=mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_array($result)){
+             echo '<div class="obras">
+                         <H4>'.$row['titulo'].'</H4>
+                    </div>
+                
+                        <div class="gallery-container">
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img2'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img2'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img3'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img3'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img4'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img4'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                        </div>';
+                }
+                ?>
 
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <a href="images/pintura.jpeg" data-lightbox="roadtrip"><img src="images/pintura.jpeg" alt="Foto de aplicacipon de pintura a edificio"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/pintura2.jpeg" data-lightbox="roadtrip"><img src="images/pintura2.jpeg" alt="Foto de aplicacipon de pintura a edificio"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/pintura3.jpeg" data-lightbox="roadtrip"><img src="images/pintura3.jpeg" alt="Foto de aplicacipon de pintura a edificio"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/pintura4.jpeg" data-lightbox="roadtrip"><img src="images/pintura4.jpeg" alt="Foto de aplicacipon de pintura a edificio"></a>
-            </div>
-        </div>
-
-        <div class="obras">
-            <H4>Obra Mantenimiento de espacios verdes (Jardinería). Lerma de Villada, Edo. Méx .</H4>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <a href="images/jardin.jpeg" data-lightbox="roadtrip"><img src="images/jardin.jpeg" alt="Foto de manteniietno de areas verdes"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/jardin2.jpeg" data-lightbox="roadtrip"><img src="images/jardin2.jpeg" alt="Foto de manteniietno de areas verdes"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/jardin3.jpeg" data-lightbox="roadtrip"><img src="images/jardin3.jpeg" alt="Foto de manteniietno de areas verdes"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/jardin4.jpeg" data-lightbox="roadtrip"><img src="images/jardin4.jpeg" alt="Foto de manteniietno de areas verdes"></a>
-            </div>
-        </div>
-
-        <div class="obras">
-            <H4>Obra: Mantenimiento hidraulico en tomas.</H4>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <a href="images/toma.jpg" data-lightbox="roadtrip"><img src="images/toma.jpg" alt="Foto de mantenimiento a toma de agua"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/toma2.jpg" data-lightbox="roadtrip"><img src="images/toma2.jpg" alt="Foto de mantenimiento a toma de agua"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/toma3.jpg" data-lightbox="roadtrip"><img src="images/toma3.jpg" alt="Foto de mantenimiento a toma de agua"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/toma.jpg" data-lightbox="roadtrip"><img src="images/toma.jpg" alt="Foto de mantenimiento a toma de agua"></a>
-            </div>
-        </div>
-
-        <div class="obras">
-            <H4>Obra: Mantenimiento Impermeabilización.</H4>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <a href="images/imperm.jpg" data-lightbox="roadtrip"><img src="images/imperm.jpg" alt="Foto de Impermeabilización"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/imperm2.jpg" data-lightbox="roadtrip"><img src="images/imperm2.jpg" alt="Foto de Impermeabilización"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/imperm3.jpg" data-lightbox="roadtrip"><img src="images/imperm3.jpg" alt="Foto de Impermeabilización"></a>
-            </div>
-
-            <div class="gallery-card">
-                <a href="images/imperm4.jpg" data-lightbox="roadtrip"><img src="images/imperm4.jpg" alt="Foto de Impermeabilización"></a>
-            </div>
-        </div>
-
-        <div class="obras">
-            <H4>OBRA: Resane en muro afectado por cuarteaduras y humedad en Lerma de Villada</H4>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-card">
-                <a href="images/cuarteadura.jpg" data-lightbox=r oadtrip "><img src="images/cuarteadura.jpg " alt="Foto de repración de cuarteadura "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/cuarteadura2.jpg " data-lightbox="roadtrip "><img src="images/cuarteadura2.jpg " alt="Foto de repración de cuarteadura "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/cuarteadura3.jpeg " data-lightbox="roadtrip "><img src="images/cuarteadura3.jpeg " alt="Foto de repración de cuarteadura "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/cuarteadura4.jpeg " data-lightbox="roadtrip "><img src="images/cuarteadura4.jpeg " alt="Foto de repración de cuarteadura "></a>
-            </div>
-        </div>
-
-
-
-        <div class="obras ">
-            <H4>OBRA: Aplicación de pintura en fachada en Lerma de Villada, fraccionamiento Toscana</H4>
-        </div>
-
-        <div class="gallery-container ">
-            <div class="gallery-card ">
-                <a href="images/pintura-casa.jpeg " data-lightbox="roadtrip "><img src="images/pintura-casa.jpeg " alt="Fotos de pintura a casa "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/pintura-casa2.jpeg " data-lightbox="roadtrip "><img src="images/pintura-casa2.jpeg " alt="Fotos de pintura a casa "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/pintura-casa3.jpeg " data-lightbox="roadtrip "><img src="images/pintura-casa3.jpeg " alt="Fotos de pintura a casa "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/pintura-casa4.jpeg " data-lightbox="roadtrip "><img src="images/pintura-casa4.jpeg " alt="Fotos de pintura a casa "></a>
-            </div>
-        </div>
-
-
-
-        <div class="obras ">
-            <H4>OBRA: Carpinteria, pisos y escaleras en vivienda ubicada en fraccionamiento castaños Metepec</H4>
-        </div>
-
-        <div class="gallery-container ">
-            <div class="gallery-card ">
-                <a href="images/carpinteria-casa.jpeg " data-lightbox="roadtrip "><img src="images/carpinteria-casa.jpeg " alt="Fotos de carpinteria a casa "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/carpinteria-casa2.jpeg " data-lightbox="roadtrip "><img src="images/carpinteria-casa2.jpeg " alt="Fotos de carpinteria a casa "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/carpinteria casa-3.jpeg " data-lightbox="roadtrip "><img src="images/carpinteria casa-3.jpeg " alt="Fotos de carpinteria a casa "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/carpinteria-casa4.jpeg " data-lightbox="roadtrip "><img src="images/carpinteria-casa4.jpeg " alt="Fotos de carpinteria a casa "></a>
-            </div>
-        </div>
-
-
-
+        
         <div id="rem"></div>
         <div class="contendor-serv ">
             <div class="titulo-servicios-remodelacion ">
@@ -337,98 +167,37 @@
             </ul>
         </div>
 
-        <div class="obras ">
-            <H4>OBRA: Remodelación de oficinas administrativas INFONAVIT TOLUCA.</H4>
-        </div>
+
+        <?php
+                $sql="SELECT * from obra_rem";
+                $result=mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_array($result)){
+             echo '<div class="obras">
+                         <H4>'.$row['titulo'].'</H4>
+                    </div>
+                
+                        <div class="gallery-container">
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img2'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img2'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img3'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img3'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img4'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img4'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                        </div>';
+                }
+                ?>
 
 
-        <div class="gallery-container ">
-            <div class="gallery-card ">
-                <a href="images/cesi-infonavit.jpg " data-lightbox="roadtrip "><img src="images/cesi-infonavit.jpg " alt="Foto de remodelacion de oficinas infonavit "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/cesi-infonavit2.jpg " data-lightbox="roadtrip "><img src="images/cesi-infonavit2.jpg " alt="Foto de remodelacion de oficinas infonavit "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/cesi-infonavit3.jpg " data-lightbox="roadtrip "><img src="images/cesi-infonavit3.jpg " alt="Foto de remodelacion de oficinas infonavit "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/cesi-infonavit4.jpg " data-lightbox="roadtrip "><img src="images/cesi-infonavit4.jpg " alt="Foto de remodelacion de oficinas infonavit "></a>
-            </div>
-        </div>
-
-        <div class="obras ">
-            <H4>OBRA: Remodelación de vivíenda con plafón de tablaroca.</H4>
-        </div>
-
-        <div class="gallery-container ">
-            <div class="gallery-card ">
-                <a href="images/plafon.jpg " data-lightbox="roadtrip "><img src="images/plafon.jpg " alt="Foto de remodelación con plafon "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/plafon2.jpg " data-lightbox="roadtrip "><img src="images/plafon2.jpg " alt="Foto de remodelación con plafon "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/plafon3.jpg " data-lightbox="roadtrip "><img src="images/plafon3.jpg " alt="Foto de remodelación con plafon "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/plafon4.jpg " data-lightbox="roadtrip "><img src="images/plafon4.jpg " alt="Foto de remodelación con plafon "></a>
-            </div>
-        </div>
-
-
-        <div class="obras ">
-            <H4>OBRA: Remodelación de con plafón de tablaroca, cajillos e instalación eléctrica para luz indirecta.</H4>
-        </div>
-
-        <div class="gallery-container ">
-            <div class="gallery-card ">
-                <a href="images/oficina.jpg " data-lightbox="roadtrip "><img src="images/oficina.jpg " alt="Foto de remodelación e instalación electrica "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/oficina2.jpg " data-lightbox="roadtrip "><img src="images/oficina2.jpg " alt="Foto de remodelación e instalación electrica "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/oficina3.jpg " data-lightbox="roadtrip "><img src="images/oficina3.jpg " alt="Foto de remodelación e instalación electrica "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/oficina4.jpg " data-lightbox="roadtrip "><img src="images/oficina4.jpg " alt="Foto de remodelación e instalación electrica "></a>
-            </div>
-        </div>
-
-        <div class="obras ">
-            <H4>Obra: Colocación de malla ciclónica, cancelería y jardín en casa habitación, Ocoyoacac Edo. Méx .</H4>
-        </div>
-
-        <div class="gallery-container ">
-            <div class="gallery-card ">
-                <a href="images/maya.jpg " data-lightbox="roadtrip "><img src="images/maya.jpg " alt="Foto de instalación de malla ciclonica "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/maya2.jpg " data-lightbox="roadtrip "><img src="images/maya2.jpg " alt="Foto de instalación de malla ciclonica "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/maya3.jpg " data-lightbox="roadtrip "><img src="images/maya3.jpg " alt="Foto de instalación de malla ciclonica "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/maya4.jpg " data-lightbox="roadtrip "><img src="images/maya4.jpg " alt="Foto de instalación de malla ciclonica "></a>
-            </div>
-        </div>
-
-
-
+        
         <div id="otr"></div>
         <div class="contendor-serv ">
             <div class="titulo-servicios-otros ">
@@ -449,30 +218,33 @@
             </ul>
         </div>
 
-
-
-        <div class="obras ">
-            <H4>Elaboración de planos para casa habitación en Capulhuac, Edo. Mex</H4>
-        </div>
-
-        <div class="gallery-container ">
-            <div class="gallery-card ">
-                <a href="images/plano.jpg " data-lightbox="roadtrip "><img src="images/plano.jpg " alt="Imagen de planos de casa habitación "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/plano2.jpg " data-lightbox="roadtrip "><img src="images/plano2.jpg " alt="Imagen de planos de casa habitación "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/plano3.jpg " data-lightbox="roadtrip "><img src="images/plano3.jpg " alt="Imagen de planos de casa habitación "></a>
-            </div>
-
-            <div class="gallery-card ">
-                <a href="images/plano4.jpg " data-lightbox="roadtrip "><img src="images/plano4.jpg " alt="Imagen de planos de casa habitación "></a>
-            </div>
-        </div>
-
+        <?php
+                $sql="SELECT * from obra_rel";
+                $result=mysqli_query($conn,$sql);
+                while($row=mysqli_fetch_array($result)){
+             echo '<div class="obras">
+                         <H4>'.$row['titulo'].'</H4>
+                    </div>
+                
+                        <div class="gallery-container">
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img2'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img2'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img3'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img3'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                
+                            <div class="gallery-card">
+                                <a href="'.$row['ruta_img4'].'" data-lightbox="roadtrip"><img src="'.$row['ruta_img4'].'" alt="'.$row['alt'].'"></a>
+                            </div>
+                        </div>';
+                }
+                ?>
 
     </main>
 
@@ -485,7 +257,13 @@
         include 'includes/footer.php';
     ?>
 
+    <?php
+        include 'includes/aviso-cookies.php';
+    ?>       
 
+        
+
+    <script src="js/main-cookie.js"></script>           
     <script src="js/app.js "></script>
     <script src="js/lightbox-plus-jquery.min.js "></script>
     <script src="js/lightbox.min.js "></script>
