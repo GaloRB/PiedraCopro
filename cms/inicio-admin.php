@@ -23,7 +23,7 @@
 
                 </div>
 
-                <input type="submit" value="Guardar" name="guardar">
+                <input id="add-img" class="submit"  type="submit" value="Guardar" name="guardar">
                
                 </form>
 
@@ -31,16 +31,16 @@
         </div>
 
         <div id="modal-del" class="modal-del">
-            <div class="body-modal">
+            <div class="body-modal-del">
                 <button id="closedd" class="btn-close"><i class="fas fa-times"></i></button>
                 <h3>Eliminar Imagen</h3>
                 <form  action="eliminar_img.php" id="eliminar" method="POST">
                 <div class="form">
                     <label for="nombre" >Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre de imagen...">
+                    <input type="text" id="nombre-del" name="nombre" placeholder="Nombre de imagen...">
                 </div>
 
-                <input type="submit" value="Eliminar" name="eliminar">
+                <input id="eliminar" class="submit" type="submit" value="Eliminar" name="eliminar">
                
                 </form>
 
@@ -90,6 +90,8 @@
     </div>
 
     <script src="../js/app-cms.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
     </body>
 
 </html>

@@ -100,7 +100,7 @@
   }
   
   .table {
-      margin-left: 2rem;
+      margin-left: 5rem;
   }
   
   .table h2 {
@@ -173,7 +173,9 @@
   /* ----------------- modal -------------*/
   
   .modal {
-      display: none;
+      /*display: none;*/
+      opacity: 0;
+      visibility: hidden;
       position: fixed;
       top: 0;
       left: 0;
@@ -183,7 +185,8 @@
   }
   
   .modal-del {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
       position: fixed;
       top: 0;
       left: 0;
@@ -200,11 +203,31 @@
       padding: 1rem;
       width: 100%;
       position: relative;
+      transition: 0.8s;
+      transform: translateY(-200%);
+  }
+  
+  .body-modal-del {
+      background-color: white;
+      border-radius: 5px;
+      margin: 10rem auto;
+      max-width: 40rem;
+      padding: 1rem;
+      width: 100%;
+      position: relative;
+      transition: 0.8s;
+      transform: translateY(-200%);
+      z-index: 1000;
+  }
+  
+  .visible {
+      transform: translateY(0);
   }
   
   .btn-close {
       background-color: transparent;
       border: none;
+      cursor: pointer;
       font-size: 2.5rem;
       outline: none;
       position: absolute;
@@ -233,4 +256,8 @@
   .form input {
       height: 3rem;
       outline: none;
+  }
+  
+  .submit {
+      cursor: pointer;
   }
