@@ -30,7 +30,7 @@
                     <li><a href="nosotros-admin">Nosotros</a></li>
                     <li><a href="servicios-admin">Servicios</a></li>
                     <li><a href="contacto-admin">Contacto</a></li>
-                    <li><a href="../">Ver Página</a></li>
+                    <li><a target="_blank" href="../index.php">Ver Página</a></li>
                 </ul>
             </div>
         </section>
